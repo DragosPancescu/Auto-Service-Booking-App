@@ -59,6 +59,21 @@ The motivation behind creating this application was to learn and gain practical 
     cd ../server
     npm install
     ```
+4. Create a `.env` file in the `server` directory with the following content:
+    ```plaintext
+    MYSQL_HOST          = localhost
+    MYSQL_USER          = root
+    MYSQL_PASSWORD      = your_password
+    MYSQL_DATABASE      = your_database
+    MYSQL_PORT          = your_mysql_port
+    SERVER_PORT         = 5000
+    DB_DIALECT          = mysql
+    POOL_MAX            = 5
+    POOL_MIN            = 0
+    POOL_ACQUIRE        = 30000
+    POOL_IDLE           = 10000
+    ACCESS_TOKEN_SECRET = your_access_token_secret
+    ```
 
 ### Running the Application
 
@@ -73,5 +88,12 @@ The motivation behind creating this application was to learn and gain practical 
     cd ../client
     npm start
     ```
+### Optional: Seeding the Database
 
-3. Open your browser and navigate to `http://localhost:5000` to see the application in action.
+If you want some test data, you can run the seeders with these commands:
+```bash
+cd server
+npx sequelize-cli db:seed:all
+npx sequelize-cli db:seed:undo:all
+```
+
