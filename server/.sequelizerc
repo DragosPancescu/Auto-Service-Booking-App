@@ -1,0 +1,7 @@
+const path = require("path");
+
+module.exports = {
+  "config": path.resolve("seq_config", "config.js"),
+  "models-path": "models",
+  "seeders-path": "seeders"
+};
